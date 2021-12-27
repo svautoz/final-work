@@ -21,3 +21,27 @@ int GetArrayLength()
     return result;
 }
 
+int[] GetEvenValuesArray(int[] initArray)
+{
+    int evenArrayLength = 0;
+    for (int i = 0; i < initArray.Length; i++)
+    {
+        if (initArray[i] % 2 == 0)
+        {
+            evenArrayLength++;
+        }
+    }
+
+    int[] evenArray = new int[evenArrayLength];
+    int index = 0;
+    for (int i = 0; i < initArray.Length; i++)
+    {
+        if (initArray[i] % 2 == 0)
+        {
+            evenArray[index] = initArray[i];
+            index++;
+        }
+    }
+    return evenArray;
+}
+
