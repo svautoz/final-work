@@ -1,4 +1,4 @@
-﻿int[] CreateRandomArray(int leftBound, int rightBound, int arrayLength)
+﻿int[] CreateRandomArray(int leftBound, int rightBound, uint arrayLength)
 {
     Random rand = new Random();
     int[] array = new int[arrayLength];
@@ -9,15 +9,14 @@
     return array;
 }
 
-int GetArrayLength()
+uint GetArrayLength()
 {
-    int result;
-    do
+    uint result;
+    System.Console.Write("Введите количество элементов массива: ");
+    while (!uint.TryParse(Console.ReadLine(), out result))
     {
-        System.Console.WriteLine("Введите количество элементов массива: ");
+        System.Console.Write("Вы ввели неверные данные. Просьба повторить ввод длины массива: ");
     }
-    while (!int.TryParse(Console.ReadLine(), out result));
-
     return result;
 }
 
@@ -49,7 +48,7 @@ void PrintArrayToConsole(int[] array)
 {
     foreach (int el in array)
     {
-        System.Console.WriteLine(el + " ");
+        System.Console.Write(el + " ");
     }
     System.Console.WriteLine();
 }
