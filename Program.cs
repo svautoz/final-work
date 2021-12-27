@@ -9,3 +9,15 @@
     return array;
 }
 
+int GetArrayLength()
+{
+    int result;
+    do
+    {
+        System.Console.WriteLine("Введите количество элементов массива: ");
+    }
+    while (!int.TryParse(Console.ReadLine(), out result));
+
+    return result;
+}
+
