@@ -45,3 +45,21 @@ int[] GetEvenValuesArray(int[] initArray)
     return evenArray;
 }
 
+void PrintArrayToConsole(int[] array)
+{
+    foreach (int el in array)
+    {
+        System.Console.WriteLine(el + " ");
+    }
+    System.Console.WriteLine();
+}
+
+
+int leftBound = -100;
+int rightBound = 100;
+int[] initArray, evenArray;
+
+initArray = CreateRandomArray(leftBound, rightBound, GetArrayLength());
+PrintArrayToConsole(initArray);
+evenArray = GetEvenValuesArray(initArray);
+PrintArrayToConsole(evenArray);
